@@ -3,5 +3,5 @@
 ## How to run
 
 ```sh
-manim -pql scene.py CreateCircle
+manim -pql [folder]/scene.py
 ```
