@@ -14,7 +14,7 @@ class ReverseOddLevels(Scene):
         if root == None or root.left == None or root.right == None:
             return
 
-        root.val[2].set_fill(GREEN)
+        root.val[2].set_fill(BLUE)
         self.wait(.3)
         self.reverse_helper(root.left, root.right, True)
 
