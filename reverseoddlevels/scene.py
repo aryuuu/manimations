@@ -22,6 +22,11 @@ class ReverseOddLevels(Scene):
         if left == None or right == None:
             return
 
+        self.play(
+            left.val[2].animate.set_fill(BLUE),
+            right.val[2].animate.set_fill(BLUE),
+        )
+
         if flag:
             self.play(
                 left.val[3].animate.move_to(right.val[3].get_center()),
@@ -65,7 +70,7 @@ class ReverseOddLevels(Scene):
         )
         c.set_z_index(1)
         l = Text(str(nodes[0]), font_size=FONT_SIZE).move_to(c.get_center())
-        l.set_z_index(1)
+        l.set_z_index(2)
 
         # val, level, circle, label
         root = TreeNode([nodes[0], 0, c, l])
@@ -91,7 +96,7 @@ class ReverseOddLevels(Scene):
                 )
                 cl.set_z_index(1)
                 ll = Text(str(nodes[i]), font_size=FONT_SIZE).move_to(cl.get_center())
-                ll.set_z_index(1)
+                ll.set_z_index(2)
                 line = Line(curr.val[2].get_center(), cl.get_center())
                 line.set_z_index(0)
                 anims.append(Create(cl))
@@ -118,7 +123,7 @@ class ReverseOddLevels(Scene):
                 )
                 cr.set_z_index(1)
                 lr = Text(str(nodes[i]), font_size=FONT_SIZE).move_to(cr.get_center())
-                lr.set_z_index(1)
+                lr.set_z_index(2)
                 line = Line(curr.val[2].get_center(), cr.get_center())
                 line.set_z_index(0)
                 anims.append(Create(cr))
